@@ -24,6 +24,10 @@
   margin-right: 10px;
 }
 
+.about-me .li_active {
+  font-weight: bold;
+}
+
 .about-me li:last-of-type {
   margin-right: 0;
 }

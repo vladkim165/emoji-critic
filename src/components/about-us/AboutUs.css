@@ -17,11 +17,15 @@
   list-style-type: none;
   font-size: 32px;
   line-height: 37px;
-  padding: 20px 50px;
+  padding: 10px 20px;
   background-color: #E8E8E8;
   border-radius: 20px;
   margin-bottom: 20px;
   margin-right: 10px;
+}
+
+.about-us .li_active {
+  font-weight: bold;
 }
 
 .about-us li:last-of-type {

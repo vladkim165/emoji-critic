@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, useRouteMatch } from "react-router-dom";
+import { Route, NavLink, useRouteMatch } from "react-router-dom";
 import MyStory from "./MyStory";
 import Hobbies from "./Hobbies";
 import Contact from "./Contact";
@@ -12,13 +12,13 @@ function AboutMe() {
     <div className="about-me">
       <ul className="links">
         <li>
-          <Link to={`${url}/my-story`}>Моя история</Link>
+          <NavLink activeClassName="li_active" to={`${url}/my-story`}>Моя история</NavLink>
         </li>
         <li>
-          <Link to={`${url}/hobbies`}>Хобби</Link>
+          <NavLink activeClassName="li_active" to={`${url}/hobbies`}>Хобби</NavLink>
         </li>
         <li>
-          <Link to={`${url}/contact`}>Контактная информация</Link>
+          <NavLink activeClassName="li_active" to={`${url}/contact`}>Контактная информация</NavLink>
         </li>
       </ul>
       <Route path={`${path}/my-story`}>
