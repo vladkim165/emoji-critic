@@ -1,11 +1,13 @@
 import React from 'react';
 import './AboutContent.css';
+import { TranslationContext } from '../../contexts/translations/TranslationContext'
 
 function Contact() {
+  const translation = React.useContext(TranslationContext)
   return (
     <div className="about-content">
       <p>
-        Пока я не даю комментариев СМИ, но вы всё равно следите за новостями!
+        {translation.texts.aboutMe.myContacts}
       </p>
     </div>
   )

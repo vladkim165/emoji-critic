@@ -1,12 +1,15 @@
 import React from 'react';
 import './AboutContent.css';
+import { TranslationContext } from '../../contexts/translations/TranslationContext'
 
 function SiteMission() {
+  const translation = React.useContext(TranslationContext)
+
   return (
     <div className="about-content">
-      <h3>Наша миссия</h3>
+      <h3>{translation.texts.aboutUs.mission.title}</h3>
       <p>
-        Мы стремимся повысить уровень дискурса в сообществе пользователей эмодзи, а также повысить качество профессиональной критики и рецензирования эмодзи.
+      {translation.texts.aboutUs.mission.text}
       </p>
     </div>
   )

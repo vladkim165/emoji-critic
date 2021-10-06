@@ -1,6 +1,6 @@
 import React from 'react';
 import './Review.css';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 function Review (props) {
   const history = useHistory()

@@ -4,21 +4,23 @@ import MyStory from "./MyStory";
 import Hobbies from "./Hobbies";
 import Contact from "./Contact";
 import './AboutMe.css';
+import { TranslationContext } from '../../contexts/translations/TranslationContext'
 
 function AboutMe() {
   const { path, url } = useRouteMatch();
+  const translation = React.useContext(TranslationContext)
 
-  return (
+  return (  
     <div className="about-me">
       <ul className="links">
         <li>
-          <NavLink activeClassName="li_active" to={`${url}/my-story`}>Моя история</NavLink>
+          <NavLink activeClassName="li_active" to={`${url}/my-story`}>{translation.texts.aboutMe.buttons.myStory}</NavLink>
         </li>
         <li>
-          <NavLink activeClassName="li_active" to={`${url}/hobbies`}>Хобби</NavLink>
+          <NavLink activeClassName="li_active" to={`${url}/hobbies`}>{translation.texts.aboutMe.buttons.myHobby}</NavLink>
         </li>
         <li>
-          <NavLink activeClassName="li_active" to={`${url}/contact`}>Контактная информация</NavLink>
+          <NavLink activeClassName="li_active" to={`${url}/contact`}>{translation.texts.aboutMe.buttons.myContacts}</NavLink>
         </li>
       </ul>
       <Route path={`${path}/my-story`}>

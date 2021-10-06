@@ -6,10 +6,14 @@ import Review from './Review';
 import Reviews from './Reviews';
 import AboutMe from './about-me/AboutMe';
 import AboutUs from './about-us/AboutUs';
+import PageNotFound from './PageNotFound'
+import { TranslationContext, translations } from '../contexts/translations/TranslationContext'
 
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
+
+  const [lang, setLang] = React.useState('ru');
 
   const [reviews, setReviews] = useState();
   useEffect(() => {
@@ -23,16 +27,17 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <TranslationContext.Provider value={translations[lang]}>
+      <Header onLangSelect={setLang}/>
       <Switch>
         <Route exact path="/">
           <Dashboard />
         </Route>
         <Route exact path="/reviews">
-          <Reviews reviews={reviews}/>
+          <Reviews reviews={reviews} />
         </Route>
         <Route exact path="/reviews/:id">
-          <Review reviews={reviews}/>
+          <Review reviews={reviews} />
         </Route>
         <Route path="/about-me">
           <AboutMe />
@@ -40,7 +45,11 @@ function App() {
         <Route path="/about-us">
           <AboutUs />
         </Route>
+        <Route path="*">
+          <PageNotFound />
+        </Route>
       </Switch>
+      </TranslationContext.Provider>
     </div>
   );
 }
