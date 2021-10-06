@@ -25,7 +25,7 @@
 }
 
 .about-me .li_active {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .about-me li:last-of-type {

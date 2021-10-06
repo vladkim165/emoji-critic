@@ -11,14 +11,11 @@ import { Route, Switch } from 'react-router-dom';
 
 function App() {
 
-  const [reviews, setReviews] = useState([]);
-  // этот хук используется единожды, при запуске компонента
+  const [reviews, setReviews] = useState();
   useEffect(() => {
-    // получаем данные с сервера
     fetch('https://api.nomoreparties.co/emoji-critic-rus').then((res) => {
       return res.json();
     }).then((parsedReviews) => {
-      // форматируем данные и, используя setData, обновляем текущий стейт
       const reviews = Object.values(parsedReviews);
       setReviews(reviews);
     })
