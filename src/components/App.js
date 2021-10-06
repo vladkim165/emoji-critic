@@ -30,7 +30,7 @@ function App() {
       <TranslationContext.Provider value={translations[lang]}>
       <Header onLangSelect={setLang}/>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/emoji-critic">
           <Dashboard />
         </Route>
         <Route exact path="/reviews">
